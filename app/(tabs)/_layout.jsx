@@ -12,7 +12,11 @@ const TabIcon = ({ icon, color, name, focused }) => {
         tintColor={color}
         className="w-6 h-6"
       />
-      <Text className={`${focused ? `font-pbold` : `font-pregular`} text-xs`}>
+      <Text
+        className={`${
+          focused ? `font-pbold` : `font-pregular`
+        } text-xs text-white`}
+      >
         {name}
       </Text>
     </View>
@@ -25,8 +29,15 @@ const TabsLayout = () => {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
+          tabBarActiveTintColor: "#FFA001",
+          tabBarInactiveTintColor: "#CDCDE0",
           tabBarStyle: {
-            height: 60,
+            backgroundColor: "#161622",
+            borderTopWidth: 1,
+            borderTopColor: "#232533",
+            height: 84,
+            paddingTop: 5,
+            display: "flex",
             justifyContent: "center",
             alignContent: "center",
           },
@@ -54,7 +65,7 @@ const TabsLayout = () => {
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
-                icon={icons.upload}
+                icon={icons.plus}
                 color={color}
                 name="create"
                 focused={focused}
